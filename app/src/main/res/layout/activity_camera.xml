@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CameraActivity">
+
+    <SurfaceView
+        android:id="@+id/cameraPreView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/resultImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/pictureButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:tint="#000000"
+        app:backgroundTint="#FFFFFF"
+        app:borderWidth="4dp"
+        app:elevation="0dp"
+        app:fabCustomSize="60dp"
+        app:fabSize="auto"
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        android:onClick="TakePicture"/>
+
+    <ImageButton
+        android:id="@+id/objButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="#80FFFFFF"
+        android:onClick="ChangeToOcrMode"
+        android:visibility="gone"
+        app:srcCompat="@drawable/objicon" />
+
+    <ImageButton
+        android:id="@+id/ocrButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="#80FFFFFF"
+        android:onClick="ChangeToObjMode"
+        android:visibility="visible"
+        app:srcCompat="@drawable/ocricon" />
+
+    <ImageButton
+        android:id="@+id/translationButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="#80FFFFFF"
+        android:onClick="LookTranslation"
+        android:visibility="visible"
+        app:srcCompat="@drawable/translationicon" />
+
+    <ProgressBar
+        android:id="@+id/cameraPrograssBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
+</RelativeLayout>
